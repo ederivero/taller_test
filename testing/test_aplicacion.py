@@ -29,7 +29,7 @@ def test_crear_tarea(cliente: Flask):
     })
 
     assert 'message' in respuesta.json
-    assert respuesta.json.get('message') == 'Tarea creada exitosamente'
+    assert respuesta.json.get('message') == 'Tarea creada exitosamente.'
     assert respuesta.status_code == 201
 
 def test_fallo_crear_tarea(cliente: Flask):

@@ -26,7 +26,7 @@ class TareaController(Resource):
             conexion.session.commit()
 
             return {
-                'message': 'Tarea creada exitosamente',
+                'message': 'Tarea creada exitosamente.',
                 'content': serializador.dump(nueva_tarea)
             }, 201
 
