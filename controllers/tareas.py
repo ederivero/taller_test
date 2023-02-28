@@ -28,10 +28,10 @@ class TareaController(Resource):
             return {
                 'message': 'Tarea creada exitosamente',
                 'content': serializador.dump(nueva_tarea)
-            }
+            }, 201
 
         except Exception as e:
             return {
                 'message': 'Error al crear la tarea',
                 'content': e.args
-            }
+            }, 400
