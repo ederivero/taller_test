@@ -1,0 +1,22 @@
+name: workflow-de-los-pull-request
+on:
+  pull_request:
+    braches:
+      - main
+jobs:
+  contruir_y_testear:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - name: validar el repo
+        uses: actions/checkout@v3
+      
+      - name: validar e instalar python
+        uses: actions/setup-python@v4
+      
+      - name: instalar las librerias
+        run: pip3 install -r requirements.txt
+
+      - name: correr los tests
+        run: pytest 
